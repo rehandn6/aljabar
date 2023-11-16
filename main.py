@@ -61,7 +61,7 @@ def input_matrix6x6(label):
     matrix = np.zeros((6, 6))
     for i in range(6):
         for j in range(6):
-            matrix[i][j] = columns[j].number_input(f' ({i+1}, {j+1})', value=0.0, format="%.2f", key=f'{label}-{i}-{j}')
+            matrix[i][j] = st.number_input(f' ({i+1}, {j+1})', value=0.0, format="%.2f", key=f'{label}-{i}-{j}')
     return matrix
 
 def input_permintaan6x6(label):
