@@ -57,27 +57,27 @@ def input_permintaan3x3(label):
             matrix[i][j] = st.number_input(f'Masukan nilai permintaan akhir {i+1}', value=0.0, format="%.2f", key=f'{label}-{i}-{j}')
     return matrix
 
-def input_matrix6x6(label):
-    matrix = np.zeros((6, 6))
-    columns = st.columns(6)
-    for i in range(6):
-        for j in range(6):
-            matrix[i][j] = columns[j].number_input(f' ({i+1}, {j+1})', value=0.0, format="%.4f", key=f'{label}-{i}-{j}')
-    return matrix
+# def input_matrix6x6(label):
+#     matrix = np.zeros((6, 6))
+#     columns = st.columns(6)
+#     for i in range(6):
+#         for j in range(6):
+#             matrix[i][j] = columns[j].number_input(f' ({i+1}, {j+1})', value=0.0, format="%.4f", key=f'{label}-{i}-{j}')
+#     return matrix
 
-def input_permintaan6x6(label):
-    matrix = np.zeros((6, 1))
-    for i in range(6):
-        for j in range(1):
-            matrix[i][j] = st.number_input(f'Masukan nilai permintaan akhir {i+1}', value=0.0, format="%.2f", key=f'{label}-{i}-{j}')
-    return matrix
+# def input_permintaan6x6(label):
+#     matrix = np.zeros((6, 1))
+#     for i in range(6):
+#         for j in range(1):
+#             matrix[i][j] = st.number_input(f'Masukan nilai permintaan akhir {i+1}', value=0.0, format="%.2f", key=f'{label}-{i}-{j}')
+#     return matrix
 
-def input_permintaan9x9(label):
-    matrix = np.zeros((9, 1))
-    for i in range(9):
-        for j in range(1):
-            matrix[i][j] = st.number_input(f'Masukan nilai permintaan akhir {i+1}', value=0.0, format="%.2f", key=f'{label}-{i}-{j}')
-    return matrix
+# def input_permintaan9x9(label):
+#     matrix = np.zeros((9, 1))
+#     for i in range(9):
+#         for j in range(1):
+#             matrix[i][j] = st.number_input(f'Masukan nilai permintaan akhir {i+1}', value=0.0, format="%.2f", key=f'{label}-{i}-{j}')
+#     return matrix
 
 def main3x3():
     st.header("Matriks Koefisien Teknis 3x3:")
@@ -100,42 +100,42 @@ def main3x3():
     chart_data = pd.DataFrame(final_result, columns=[" "])
     st.bar_chart(chart_data)
     
-def main6x6():
-    st.header("Matriks Koefisien Teknis 6x6:")
-    matrix_a = input_matrix6x6("A")
-    result_matrix =identitas6x6 - matrix_a
-    inverse_matrix = np.linalg.inv(result_matrix)
-    st.write("Matriks Input Anda")
-    st.write(matrix_a)
-    st.write("---")
-    st.header("Permintaan Akhir")
-    demand_matrix = input_permintaan6x6("D")
-    st.write("---")
-    st.header("Hasil : ")
-    final_result = np.dot(inverse_matrix, demand_matrix)
-    st.write(final_result)
-    st.write("---")
-    st.header("Visualisasi Data")
-    chart_data = pd.DataFrame(final_result, columns=[" "])
-    st.bar_chart(chart_data)
+# def main6x6():
+#     st.header("Matriks Koefisien Teknis 6x6:")
+#     matrix_a = input_matrix6x6("A")
+#     result_matrix =identitas6x6 - matrix_a
+#     inverse_matrix = np.linalg.inv(result_matrix)
+#     st.write("Matriks Input Anda")
+#     st.write(matrix_a)
+#     st.write("---")
+#     st.header("Permintaan Akhir")
+#     demand_matrix = input_permintaan6x6("D")
+#     st.write("---")
+#     st.header("Hasil : ")
+#     final_result = np.dot(inverse_matrix, demand_matrix)
+#     st.write(final_result)
+#     st.write("---")
+#     st.header("Visualisasi Data")
+#     chart_data = pd.DataFrame(final_result, columns=[" "])
+#     st.bar_chart(chart_data)
 
-def main9x9():
-    st.header("Matriks Koefisien Teknis 9x9:")
-    result_matrix =identitas9x9  - matrix_a
-    inverse_matrix = np.linalg.inv(result_matrix)
-    st.write("Matriks Input")
-    st.write(matrix_a)
-    st.write("---")
-    st.header("Permintaan Akhir")
-    demand_matrix = input_permintaan9x9("D")
-    st.write("---")
-    st.header("Hasil : ")
-    final_result = np.dot(inverse_matrix, demand_matrix)
-    st.write(final_result)
-    st.write("---")
-    st.header("Visualisasi Data")
-    chart_data = pd.DataFrame(final_result, columns=[" "])
-    st.bar_chart(chart_data)
+# def main9x9():
+#     st.header("Matriks Koefisien Teknis 9x9:")
+#     result_matrix =identitas9x9  - matrix_a
+#     inverse_matrix = np.linalg.inv(result_matrix)
+#     st.write("Matriks Input")
+#     st.write(matrix_a)
+#     st.write("---")
+#     st.header("Permintaan Akhir")
+#     demand_matrix = input_permintaan9x9("D")
+#     st.write("---")
+#     st.header("Hasil : ")
+#     final_result = np.dot(inverse_matrix, demand_matrix)
+#     st.write(final_result)
+#     st.write("---")
+#     st.header("Visualisasi Data")
+#     chart_data = pd.DataFrame(final_result, columns=[" "])
+#     st.bar_chart(chart_data)
 
 
 
