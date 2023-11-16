@@ -71,13 +71,6 @@ def input_permintaan6x6(label):
             matrix[i][j] = st.number_input(f'Masukan nilai permintaan akhir {i+1}', value=0.0, format="%.2f", key=f'{label}-{i}-{j}')
     return matrix
 
-# def input_matrix9x9(label):
-#     matrix = np.zeros((9, 9))
-#     for i in range(9):
-#         for j in range(9):
-#             matrix[i][j] = st.number_input(f'Masukan nilai koefisien input matriks ({i+1}, {j+1})', value=0.0, format="%.2f", key=f'{label}-{i}-{j}')
-#     return matrix
-
 def input_permintaan9x9(label):
     matrix = np.zeros((9, 1))
     for i in range(9):
@@ -120,6 +113,8 @@ def main6x6():
     st.header("Hasil : ")
     final_result = np.dot(inverse_matrix, demand_matrix)
     st.write(final_result)
+    st.write("---")
+    st.header("Visualisasi Data")
     chart_data = pd.DataFrame(final_result, columns=[" "])
     st.bar_chart(chart_data)
 
@@ -136,6 +131,8 @@ def main9x9():
     st.header("Hasil : ")
     final_result = np.dot(inverse_matrix, demand_matrix)
     st.write(final_result)
+    st.write("---")
+    st.header("Visualisasi Data")
     chart_data = pd.DataFrame(final_result, columns=[" "])
     st.bar_chart(chart_data)
 
